@@ -19,8 +19,9 @@ class jpwp {
 	public $input;
 
 	public function __construct() {
-		require_once 'error.php';
-		require_once 'input.php';
+		require_once 'class-error.php';
+		require_once 'class-input.php';
+
 		$this->error = new \jptt\core\Error();
 		$this->input = new \jptt\core\Input();
 	}

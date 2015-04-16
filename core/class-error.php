@@ -1,14 +1,14 @@
 <?php
 
-defined('ABSPATH') or die('No direct script access allowed');
-
 namespace jpwp\core;
+
+defined('ABSPATH') or die('No direct script access allowed');
 
 /**
  * @since v0.0.1
  * @author jprieton
  */
-class Error extends WP_Error {
+class Error extends \WP_Error {
 
 	public function __construct($code = '', $message = '', $data = '') {
 		parent::__construct($code, $message, $data);
