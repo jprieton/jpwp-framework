@@ -1,0 +1,137 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: a23\n"
+"POT-Creation-Date: 2015-04-16 02:59-0430\n"
+"PO-Revision-Date: 2015-04-16 02:59-0430\n"
+"Last-Translator: Javier Prieto <jprieton@gmail.com>\n"
+"Language-Team: \n"
+"Language: es_ES\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.5.4\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c\n"
+"X-Poedit-Basepath: .\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-SearchPath-0: ..\n"
+
+#: ../core/class-error.php:25
+msgid "Method not supported"
+msgstr "Método no soportado"
+
+#: ../core/class-error.php:38
+msgid "User not logged yet"
+msgstr "Usuario no conectado aún"
+
+#: ../core/class-error.php:51
+msgid "User logged in yet"
+msgstr "Usuario conectado todavía"
+
+#: ../core/class-error.php:64
+msgid "Incorrect data"
+msgstr "Datos incorrectos"
+
+#~ msgid "result"
+#~ msgid_plural "results"
+#~ msgstr[0] "resultado"
+#~ msgstr[1] "resultados"
+
+#~ msgid "%d result"
+#~ msgid_plural "%d results"
+#~ msgstr[0] "%d resultado"
+#~ msgstr[1] "%d resultados"
+
+#~ msgid "Publications"
+#~ msgstr "Publicaciones"
+
+#~ msgid "Conditions"
+#~ msgstr "Condiciones"
+
+#~ msgid "Condition"
+#~ msgstr "Condición"
+
+#~ msgctxt "taxonomy_slug"
+#~ msgid "condition"
+#~ msgstr "condicion"
+
+#~ msgid "Operation Type"
+#~ msgstr "Tipo de operación"
+
+#~ msgid "Operation Types"
+#~ msgstr "Tipos de operación"
+
+#~ msgctxt "taxonomy_slug"
+#~ msgid "operation"
+#~ msgstr "operacion"
+
+#~ msgid "Cities"
+#~ msgstr "Ciudades"
+
+#~ msgid "City"
+#~ msgstr "Ciudad"
+
+#~ msgctxt "taxonomy_slug"
+#~ msgid "city"
+#~ msgstr "ciudad"
+
+#~ msgid "Property Type"
+#~ msgstr "Tipo de propiedad"
+
+#~ msgid "Property Types"
+#~ msgstr "Tipos de propiedad"
+
+#~ msgctxt "taxonomy_slug"
+#~ msgid "type"
+#~ msgstr "tipo"
+
+#~ msgid "Stratus"
+#~ msgstr "Estrato"
+
+#~ msgctxt "taxonomy_slug"
+#~ msgid "stratus"
+#~ msgstr "estrato"
+
+#~ msgid "Attributes"
+#~ msgstr "Atributos"
+
+#~ msgid "Attribute"
+#~ msgstr "Atributo"
+
+#~ msgctxt "taxonomy_slug"
+#~ msgid "attribute"
+#~ msgstr "atributo"
+
+#~ msgid "Publication"
+#~ msgstr "Publicación"
+
+#~ msgctxt "post_type_slug"
+#~ msgid "publication"
+#~ msgstr "publicacion"
+
+#~ msgid "publication"
+#~ msgstr "publicación"
+
+#~ msgctxt "post_type_slug"
+#~ msgid "publications"
+#~ msgstr "publicaciones"
+
+#~ msgid "Conversations"
+#~ msgstr "Conversaciones"
+
+#~ msgid "Conversation"
+#~ msgstr "Conversación"
+
+#~ msgctxt "post_type_slug"
+#~ msgid "conversation"
+#~ msgstr "conversacion"
+
+#~ msgid "conversation"
+#~ msgstr "conversación"
+
+#~ msgid "Type"
+#~ msgstr "Tipo"
+
+#~ msgctxt "taxonomy_slug"
+#~ msgid "property_type"
+#~ msgstr "tipo_propiedad"

@@ -1,2 +1,2 @@
-# wp-framework
+# jpwp-framework
 Framework for WordPress
