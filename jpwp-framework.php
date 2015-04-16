@@ -19,6 +19,17 @@ define('JPWP_PLUGIN_URI', plugin_dir_url(__FILE__));
 define('JPWP_THEME_PATH', get_stylesheet_directory());
 define('JPWP_THEME_URI', get_stylesheet_directory_uri());
 
-require_once JPWP_PLUGIN_PATH . '/core/class-jptt.php';
-global $jptt;
-$jptt = new jpwp();
+require_once JPWP_PLUGIN_PATH . '/core/class-jpwp.php';
+
+global $jpwp;
+$jpwp = new jpwp();
+
+/**
+ *
+ * @global jpwp $jpwp
+ * @return \jpwp
+ */
+function &get_instance() {
+	global $jpwp;
+	return $jpwp;
+}

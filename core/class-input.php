@@ -1,8 +1,8 @@
 <?php
 
-defined('ABSPATH') or die('No direct script access allowed');
-
 namespace jpwp\core;
+
+defined('ABSPATH') or die('No direct script access allowed');
 
 /**
  * @since 0.0.1
@@ -11,7 +11,7 @@ namespace jpwp\core;
 class Input {
 
 	/**
-	 * 
+	 *
 	 * @param string $index
 	 * @param mixed $fallback
 	 * @param int $filter
@@ -27,7 +27,7 @@ class Input {
 	}
 
 	/**
-	 * 
+	 *
 	 * @param string $index
 	 * @param mixed $fallback
 	 * @param int $filter
@@ -43,7 +43,7 @@ class Input {
 	}
 
 	/**
-	 * 
+	 *
 	 * @param string $index
 	 * @param mixed $fallback
 	 * @param int $filter
@@ -58,7 +58,7 @@ class Input {
 	}
 
 	/**
-	 * 
+	 *
 	 * @param string $index
 	 * @param mixed $fallback
 	 * @param int $filter
@@ -73,7 +73,7 @@ class Input {
 	}
 
 	/**
-	 * 
+	 *
 	 * @param string $key
 	 * @param string $method
 	 * @return string
@@ -89,7 +89,7 @@ class Input {
 	}
 
 	/**
-	 * 
+	 *
 	 * @param string $action
 	 * @param string $key
 	 * @param string $method
