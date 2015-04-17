@@ -3,13 +3,12 @@
 add_action('wp_ajax_nopriv_user_login', function () {
 
 	$jpwp = get_instance();
-	$jpwp->load->model('users');
 
 	$verify_nonce = (bool) $jpwp->input->verify_wpnonce('user_login');
 
 	if (!$verify_nonce) {
 		$jpwp->error->method_not_supported(__FUNCTION__);
-		wp_send_json_error($this->error);
+		wp_send_json_error($jpwp->error);
 	}
 
 	$submit = array(
@@ -18,6 +17,7 @@ add_action('wp_ajax_nopriv_user_login', function () {
 			'remember'      => $jpwp->input->post('remember')
 	);
 	
+	$jpwp->load->model('users');
 	$response = $jpwp->users->user_login($submit);
 
 	if (is_wp_error($response)) {

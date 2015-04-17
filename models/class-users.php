@@ -59,6 +59,22 @@ class Users {
 		}
 	}
 
+	public function user_register($userdata) {
+		$user_id = wp_insert_user($userdata);
+
+		if (is_wp_error($user_id)) {
+			return $user_id;
+		} else {
+			add_user_meta($user_id, 'show_admin_bar_front', 'false');
+			$response[] = array(
+					'code' => 'user_register_success',
+					'message' => 'Registro exitoso',
+					'user_id' => $user_id,
+			);
+			return $response;
+		}
+	}
+
 	/**
 	 * Verifica si el usuario esta bloqueado
 	 * @param int|string $user_id

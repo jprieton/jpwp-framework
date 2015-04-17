@@ -16,7 +16,7 @@ class Error extends \WP_Error {
 
 	/**
 	 * Shortcut fot <i>method not support</i> error
-	 * @since v0.9.0
+	 * @since 0.0.1
 	 * @author jprieton
 	 * @param string $method
 	 */
@@ -29,7 +29,7 @@ class Error extends \WP_Error {
 
 	/**
 	 * Shortcut fot <i>user not logged</i> error
-	 * @since v0.9.0
+	 * @since 0.0.1
 	 * @param string $method
 	 * @author jprieton
 	 */
@@ -42,7 +42,7 @@ class Error extends \WP_Error {
 
 	/**
 	 * Shortcut fot <i>user logged in</i> error
-	 * @since v0.9.0
+	 * @since 0.0.1
 	 * @param string $method
 	 * @author jprieton
 	 */
@@ -55,7 +55,7 @@ class Error extends \WP_Error {
 
 	/**
 	 * Shortcut fot <i>user logged in</i> error
-	 * @since v0.9.0
+	 * @since 0.0.1
 	 * @param string $method
 	 * @author jprieton
 	 */

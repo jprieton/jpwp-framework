@@ -38,10 +38,11 @@ class Loader {
 		}
 	}
 
-	public function module($module) {
+	public function module($module, $override = FALSE) {
 		if (file_exists(JPWP_THEME_PATH . '/modules/' . $module . '.php')) {
 			include_once JPWP_THEME_PATH . '/modules/' . $module . '.php';
-		} elseif (file_exists(JPWP_PLUGIN_PATH . '/modules/' . $module . '.php')) {
+		}
+		if (file_exists(JPWP_PLUGIN_PATH . '/modules/' . $module . '.php') && !$override) {
 			include_once JPWP_PLUGIN_PATH . '/modules/' . $module . '.php';
 		}
 	}
