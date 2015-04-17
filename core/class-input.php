@@ -20,10 +20,10 @@ class Input {
 	 * @since 0.0.1
 	 * @author jprieton
 	 */
-	public function post($index, $fallback = '', $filter = FILTER_DEFAULT, $options = array()) {
+	public function post($index, $filter = FILTER_DEFAULT, $options = array()) {
 		$value = filter_input(INPUT_POST, $index, $filter, $options);
 		$sanitized_value = sanitize_text_field($value);
-		return (empty($sanitized_value)) ? $fallback : $sanitized_value;
+		return $sanitized_value;
 	}
 
 	/**
@@ -36,40 +36,10 @@ class Input {
 	 * @since 0.0.1
 	 * @author jprieton
 	 */
-	public function get($index, $fallback = '', $filter = FILTER_DEFAULT, $options = array()) {
+	public function get($index, $filter = FILTER_DEFAULT, $options = array()) {
 		$value = filter_input(INPUT_GET, $index, $filter, $options);
 		$sanitized_value = sanitize_text_field($value);
-		return (empty($sanitized_value)) ? $fallback : $sanitized_value;
-	}
-
-	/**
-	 *
-	 * @param string $index
-	 * @param mixed $fallback
-	 * @param int $filter
-	 * @param array $options
-	 * @return mixed
-	 * @since 0.0.1
-	 * @author jprieton
-	 */
-	public function post_get($index, $fallback = '', $filter = FILTER_DEFAULT, $options = array()) {
-		$post = $this->post($index, $fallback, $filter, $options);
-		return !empty($post) ? $post : $this->get($index, $fallback, $filter, $options);
-	}
-
-	/**
-	 *
-	 * @param string $index
-	 * @param mixed $fallback
-	 * @param int $filter
-	 * @param array $options
-	 * @return mixed
-	 * @since 0.0.1
-	 * @author jprieton
-	 */
-	public function get_post($index, $fallback = '', $filter = FILTER_DEFAULT, $options = array()) {
-		$get = $this->post($index, $fallback, $filter, $options);
-		return !empty($get) ? $get : $this->post($index, $fallback, $filter, $options);
+		return $sanitized_value;
 	}
 
 	/**
