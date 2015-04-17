@@ -8,6 +8,7 @@ class Users {
 
 	/**
 	 * Maximum login attempts
+	 * @since v0.0.1
 	 * @var int
 	 */
 	private $max_login_attempts;
@@ -18,11 +19,10 @@ class Users {
 
 	/**
 	 * Inicio de sesion de usuarios
-	 * JSON
+	 * @since v0.0.1
 	 */
 	public function user_login($submit) {
-		global $jpwp;
-		$jpwp instanceof jpwp;
+		$jpwp = get_instance();
 
 		$user_id = username_exists($submit['user_login']);
 		if (empty($user_id)) {
@@ -79,6 +79,7 @@ class Users {
 	 * Verifica si el usuario esta bloqueado
 	 * @param int|string $user_id
 	 * @return boolean
+	 * @since v0.0.1
 	 */
 	private function is_user_blocked($user_id) {
 
@@ -108,6 +109,7 @@ class Users {
 	/**
 	 * Bloquear usuarios
 	 * @param int $user_id
+	 * @since v0.0.1
 	 */
 	private function block_user($user_id) {
 		add_user_meta($user_id, 'user_blocked', TRUE, TRUE);
@@ -116,6 +118,7 @@ class Users {
 	/**
 	 * Agregar intentos fallidos al contador de usuarios
 	 * @param int $user_id
+	 * @since v0.0.1
 	 */
 	private function add_user_attempt($user_id) {
 		$login_attempts = (int) get_user_meta($user_id, 'login_attempts', TRUE);
@@ -126,9 +129,38 @@ class Users {
 	/**
 	 * Desbloquear usuarios y borrar intentos fallidos
 	 * @param int $user_id
+	 * @since v0.0.1
 	 */
 	private function clear_user_attempt($user_id) {
 		update_user_meta($user_id, 'login_attempts', 0);
+	}
+
+	public function update_user_pass($current_pass, $new_pass) {
+
+		$jpwp = get_instance();
+
+		if (!is_user_logged_in()) {
+			$jpwp->error->user_not_logged(__FUNCTION__);
+			return $jpwp->error;
+		}
+
+		$user_id = get_current_user_id();
+		$current_user = get_user_by('id', $user_id);
+
+		$valid_pass = wp_check_password($current_pass, $current_user->get('user_pass'), $user_id);
+
+		if (!$valid_pass) {
+			$jpwp->error->add('bad_user_pass', __('Current pass invalid', 'jpwp'));
+			return $jpwp->error;
+		}
+
+		wp_set_password($new_pass, $user_id);
+
+		$data[] = array(
+				'code' => 'success_update',
+				'message' => 'Contraseña actualizada exitosamente'
+		);
+		return $data;
 	}
 
 }
