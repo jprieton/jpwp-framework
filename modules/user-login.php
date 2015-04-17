@@ -5,10 +5,10 @@ add_action('wp_ajax_nopriv_user_login', function () {
 	$jpwp = get_instance();
 	$jpwp->load->model('users');
 
-	$verify_nonce = (bool) $jpwp->input->verify_wpnonce('_wpnonce');
+	$verify_nonce = (bool) $jpwp->input->verify_wpnonce('user_login');
 
 	if (!$verify_nonce) {
-		$jpwp->error->method_rejected(__FUNCTION__);
+		$jpwp->error->method_not_supported(__FUNCTION__);
 		wp_send_json_error($this->error);
 	}
 
@@ -17,7 +17,7 @@ add_action('wp_ajax_nopriv_user_login', function () {
 			'user_password' => $jpwp->input->post('user_password'),
 			'remember'      => $jpwp->input->post('remember')
 	);
-
+	
 	$response = $jpwp->users->user_login($submit);
 
 	if (is_wp_error($response)) {
@@ -25,4 +25,4 @@ add_action('wp_ajax_nopriv_user_login', function () {
 	} else {
 		wp_send_json_success($response);
 	}
-});
+}, 5);

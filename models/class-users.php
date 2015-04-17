@@ -60,6 +60,36 @@ class Users {
 	}
 
 	/**
+	 * Verifica si el usuario esta bloqueado
+	 * @param int|string $user_id
+	 * @return boolean
+	 */
+	private function is_user_blocked($user_id) {
+
+		if (!is_int($user_id)) {
+			$user_id = (bool) username_exists($user_id);
+		}
+
+		if ($user_id == 0) {
+			return FALSE;
+		}
+
+		$user_blocked = (bool) get_user_meta($user_id, 'user_blocked', FALSE);
+
+		if ($this->max_login_attempts < 0) return FALSE;
+
+		if ($user_blocked) return TRUE;
+
+		$user_attemps = get_user_meta($user_id, 'login_attempts', TRUE);
+
+		if ($user_attemps > $this->max_login_attempts) {
+			$this->block_user($user_id);
+			$user_blocked = TRUE;
+		}
+		return $user_blocked;
+	}
+
+	/**
 	 * Bloquear usuarios
 	 * @param int $user_id
 	 */
