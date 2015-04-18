@@ -39,6 +39,14 @@ class jpwp {
 	}
 
 	public function config($config) {
+		
+		// Models
+		if (!empty($config['models'])) {
+			$models = (array) $config['models'];
+			foreach ($models as $model) {
+				$this->load->model($model);
+			}
+		}
 		// Post types
 		if (!empty($config['post_types'])) {
 			$post_types = (array) $config['post_types'];
@@ -60,11 +68,18 @@ class jpwp {
 				$this->load->module($module);
 			}
 		}
-		// Modules
+		// Filters
 		if (!empty($config['filters'])) {
 			$filters = (array) $config['filters'];
 			foreach ($filters as $filter) {
 				$this->load->filter($filter);
+			}
+		}
+		// Helpers
+		if (!empty($config['helpers'])) {
+			$helpers = (array) $config['helpers'];
+			foreach ($helpers as $helper) {
+				$this->load->helper($helper);
 			}
 		}
 	}

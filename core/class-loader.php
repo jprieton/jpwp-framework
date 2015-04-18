@@ -47,6 +47,15 @@ class Loader {
 		}
 	}
 
+	public function helper($helper, $override = FALSE) {
+		if (file_exists(JPWP_THEME_PATH . '/helpers/' . $helper . '.php')) {
+			include_once JPWP_THEME_PATH . '/helpers/' . $helper . '.php';
+		}
+		if (file_exists(JPWP_PLUGIN_PATH . '/helpers/' . $helper . '.php') && !$override) {
+			include_once JPWP_PLUGIN_PATH . '/helpers/' . $helper . '.php';
+		}
+	}
+
 	public function post_type($post_type) {
 		if (file_exists(JPWP_THEME_PATH . '/post_types/' . $post_type . '.php')) {
 			include_once JPWP_THEME_PATH . '/post_types/' . $post_type . '.php';
