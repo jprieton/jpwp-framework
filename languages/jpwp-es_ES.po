@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: a23\n"
-"POT-Creation-Date: 2015-04-16 02:59-0430\n"
-"PO-Revision-Date: 2015-04-16 02:59-0430\n"
+"POT-Creation-Date: 2015-04-19 03:02-0430\n"
+"PO-Revision-Date: 2015-04-19 03:03-0430\n"
 "Last-Translator: Javier Prieto <jprieton@gmail.com>\n"
 "Language-Team: \n"
 "Language: es_ES\n"
@@ -15,6 +15,22 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-SearchPath-0: ..\n"
+
+#: ../modules/user-profile-picture.php:41
+msgid "User profile imagen updated"
+msgstr "Imagen de perfil actualizada"
+
+#: ../modules/user-change-pass.php:18 ../models/class-users.php:153
+msgid "Current pass invalid"
+msgstr "Contraseña actual inválida"
+
+#: ../modules/user-change-pass.php:23
+msgid "New password empty or invalid"
+msgstr "Nueva contraseña vacía o inválida"
+
+#: ../models/class-media.php:46 ../models/class-media.php:78
+msgid "Invalid or empty file"
+msgstr "Archivo vacío o inválido"
 
 #: ../core/class-error.php:25
 msgid "Method not supported"
