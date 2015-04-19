@@ -52,9 +52,9 @@ class Input {
 	 */
 	public function get_wpnonce($key = '_wpnonce', $method = 'post') {
 		if (in_array($method, array('post', 'get', 'post_get', 'get_post'))) {
-			return $this->{$method}($key, '', FILTER_SANITIZE_STRIPPED);
+			return $this->{$method}($key, FILTER_SANITIZE_STRIPPED);
 		} else {
-			return $this->post($key, '', FILTER_SANITIZE_STRIPPED);
+			return $this->post($key, FILTER_SANITIZE_STRIPPED);
 		}
 	}
 
