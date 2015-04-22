@@ -1,7 +1,5 @@
 <?php
 
-defined('ABSPATH') OR exit('No direct script access allowed');
-
 /**
  * Plugin Name: JP WordPress Framework
  * Plugin URI: https://github.com/jprieton/jpwp-framework/
@@ -13,6 +11,8 @@ defined('ABSPATH') OR exit('No direct script access allowed');
  * Author URI: https://github.com/jprieton/
  * License: GPL2
  */
+defined('ABSPATH') OR exit('No direct script access allowed');
+
 define('JPWP_PLUGIN_PATH', plugin_dir_path(__FILE__));
 define('JPWP_PLUGIN_URI', plugin_dir_url(__FILE__));
 
