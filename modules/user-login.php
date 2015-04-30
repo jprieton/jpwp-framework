@@ -1,5 +1,8 @@
 <?php
 
+/**
+ * Inicio de sesion de usuarios (AJAX)
+ */
 add_action('wp_ajax_nopriv_user_login', function () {
 
 	$jpwp = get_instance();
@@ -16,7 +19,7 @@ add_action('wp_ajax_nopriv_user_login', function () {
 			'user_password' => $jpwp->input->post('user_password'),
 			'remember'      => $jpwp->input->post('remember')
 	);
-	
+
 	$jpwp->load->model('users');
 	$response = $jpwp->users->user_login($submit);
 
@@ -25,4 +28,4 @@ add_action('wp_ajax_nopriv_user_login', function () {
 	} else {
 		wp_send_json_success($response);
 	}
-}, 5);
+}, 10);

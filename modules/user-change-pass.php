@@ -1,5 +1,8 @@
 <?php
 
+/**
+ * Cambio de contraseñas de usuarios (AJAX)
+ */
 add_action('wp_ajax_user_change_pass', function () {
 
 	$jpwp = get_instance();
